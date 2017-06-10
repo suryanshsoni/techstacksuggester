@@ -5,12 +5,18 @@ app = Flask(__name__ , static_url_path='')
 @app.route('/templates/<path:path>')
 def send_sjicstatic_template(path):
     return send_from_directory('templates', path)
-@app.route('/img/<path:path>')
 
+@app.route('/img/<path:path>')
 def send_sjicstaticimg_template(path):
     return send_from_directory('templates/img', path)
 
+@app.route('/js/<path:path>')
+def send_sjicstaticjs_template(path):
+    return send_from_directory('templates/js', path)
 
+@app.route('/css/<path:path>')
+def send_sjicstaticcss_template(path):
+    return send_from_directory('templates/css', path)
 
 @app.route("/")
 def hello():
